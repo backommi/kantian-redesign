@@ -3,79 +3,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>瞰天科技 - 极简实验室风格</title>
+    <title>瞰天科技 - 极简实验室</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body {
-            background: #FFFFFF;
-            font-family: 'Microsoft YaHei', sans-serif;
+        * { 
+            font-family: 'Inter', -apple-system, sans-serif; 
         }
-        .minimal-border {
-            border: 1px solid #E8E8E8;
+        
+        body {
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+        
+        .text-muted { color: #6b7280; }
+        
+        .section-number {
+            font-size: 120px;
+            font-weight: 800;
+            color: #f3f4f6;
+            position: absolute;
+            top: -40px;
+            left: -20px;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+        
+        .card-simple {
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        
+        .card-simple:hover {
+            border-color: #1a1a1a;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .link-line {
+            position: relative;
+        }
+        
+        .link-line::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #1a1a1a;
+            transition: width 0.3s ease;
+        }
+        
+        .link-line:hover::after {
+            width: 100%;
+        }
+        
+        .btn-dark {
+            background: #1a1a1a;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-dark:hover {
+            background: #374151;
+        }
+        
+        .divider {
+            height: 1px;
+            background: #e5e7eb;
         }
     </style>
 </head>
-<body class="text-black">
-    <!-- 导航栏 -->
-    <nav class="fixed w-full z-50 bg-white border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
-            <h1 class="text-2xl font-bold">瞰天科技</h1>
-            <div class="space-x-12">
-                <a href="#" class="text-sm hover:text-gray-600 transition">首页</a>
-                <a href="#" class="text-sm hover:text-gray-600 transition">技术服务</a>
-                <a href="#" class="text-sm hover:text-gray-600 transition">解决方案</a>
-                <a href="#" class="text-sm hover:text-gray-600 transition">关于我们</a>
+<body class="bg-white min-h-screen text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-8 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <span class="text-xl font-semibold tracking-tight">Kantian</span>
+                    <span class="text-muted ml-2">Technology</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-12 text-sm font-medium">
+                    <a href="#services" class="link-line text-gray-600 hover:text-gray-900">Services</a>
+                    <a href="#work" class="link-line text-gray-600 hover:text-gray-900">Work</a>
+                    <a href="#about" class="link-line text-gray-600 hover:text-gray-900">About</a>
+                    <a href="#contact" class="link-line text-gray-600 hover:text-gray-900">Contact</a>
+                </div>
+                <button class="btn-dark px-6 py-3 rounded-full text-sm font-medium">
+                    Get in touch
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero 区域 -->
-    <section class="min-h-screen flex items-center justify-center pt-20 bg-white">
-        <div class="text-center max-w-4xl px-8">
-            <h2 class="text-7xl font-bold mb-8 tracking-wider">AI 智能体</h2>
-            <p class="text-2xl mb-16 text-gray-600 font-light">瞰天科技 · OpenClaw 生态合作伙伴</p>
-            <div class="grid grid-cols-3 gap-16">
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-20">
+        <div class="max-w-6xl mx-auto px-8 py-32">
+            <div class="max-w-3xl">
+                <p class="text-sm font-medium text-muted mb-8 tracking-wide uppercase">Enterprise AI Solutions — Est. 2018</p>
+                <h1 class="text-6xl md:text-8xl font-extrabold leading-none tracking-tight mb-8">
+                    Building the future with
+                    <span class="block text-gray-400">intelligence.</span>
+                </h1>
+                <p class="text-xl text-muted mb-12 max-w-lg leading-relaxed">
+                    We craft enterprise-grade AI and cloud solutions that transform businesses. Simple, powerful, reliable.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="btn-dark px-8 py-4 rounded-full text-center font-medium">
+                        Start a project
+                    </a>
+                    <a href="#work" class="px-8 py-4 rounded-full font-medium border border-gray-300 hover:border-gray-900 transition text-center">
+                        View our work
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-32 grid grid-cols-2 md:grid-cols-4 gap-12">
                 <div>
-                    <div class="text-6xl font-light mb-4">AI</div>
-                    <div class="text-gray-400 text-sm tracking-wider">核心技术</div>
+                    <div class="text-4xl font-bold mb-2">100+</div>
+                    <div class="text-muted text-sm">Enterprise clients</div>
                 </div>
                 <div>
-                    <div class="text-6xl font-light mb-4">OpenClaw</div>
-                    <div class="text-gray-400 text-sm tracking-wider">开源生态</div>
+                    <div class="text-4xl font-bold mb-2">200+</div>
+                    <div class="text-muted text-sm">Projects delivered</div>
                 </div>
                 <div>
-                    <div class="text-6xl font-light mb-4">企业</div>
-                    <div class="text-gray-400 text-sm tracking-wider">商业赋能</div>
+                    <div class="text-4xl font-bold mb-2">30+</div>
+                    <div class="text-muted text-sm">Team members</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">6</div>
+                    <div class="text-muted text-sm">Years in business</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 技术服务 -->
-    <section class="py-32 px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <h3 class="text-5xl font-light text-center mb-24 tracking-wider">技术服务</h3>
-            <div class="space-y-16">
-                <div class="flex justify-between items-center border-b border-gray-200 pb-8">
-                    <h4 class="text-3xl font-light">AI 智能体开发</h4>
-                    <p class="text-gray-500 text-lg">基于 OpenClaw 框架，打造企业专属 AI 助手</p>
+    <!-- Divider -->
+    <div class="divider max-w-6xl mx-auto"></div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 relative">
+        <span class="section-number">01</span>
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div>
+                    <p class="text-sm font-medium text-muted mb-4 tracking-wide uppercase">Services</p>
+                    <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                        What we do.
+                    </h2>
+                    <p class="text-lg text-muted leading-relaxed">
+                        From AI strategy to implementation, we provide end-to-end solutions for enterprise digital transformation.
+                    </p>
                 </div>
-                <div class="flex justify-between items-center border-b border-gray-200 pb-8">
-                    <h4 class="text-3xl font-light">NemoClaw 安全方案</h4>
-                    <p class="text-gray-500 text-lg">企业级 AI 智能体安全与隐私保护</p>
+                <div class="space-y-6">
+                    <div class="card-simple rounded-2xl p-8">
+                        <div class="text-2xl mb-4">🤖</div>
+                        <h3 class="text-xl font-bold mb-3">Artificial Intelligence</h3>
+                        <p class="text-muted leading-relaxed">
+                            LLM fine-tuning, RAG systems, computer vision, and custom AI model development for enterprise needs.
+                        </p>
+                    </div>
+                    <div class="card-simple rounded-2xl p-8">
+                        <div class="text-2xl mb-4">☁️</div>
+                        <h3 class="text-xl font-bold mb-3">Cloud Architecture</h3>
+                        <p class="text-muted leading-relaxed">
+                            Multi-cloud strategy, Kubernetes deployment, and scalable infrastructure design.
+                        </p>
+                    </div>
+                    <div class="card-simple rounded-2xl p-8">
+                        <div class="text-2xl mb-4">📊</div>
+                        <h3 class="text-xl font-bold mb-3">Data Engineering</h3>
+                        <p class="text-muted leading-relaxed">
+                            Real-time data pipelines, analytics platforms, and business intelligence solutions.
+                        </p>
+                    </div>
                 </div>
-                <div class="flex justify-between items-center border-b border-gray-200 pb-8">
-                    <h4 class="text-3xl font-light">数字化转型咨询</h4>
-                    <p class="text-gray-500 text-lg">一站式数字化转型战略规划与实施</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider max-w-6xl mx-auto"></div>
+
+    <!-- Work Section -->
+    <section id="work" class="py-32 relative">
+        <span class="section-number">02</span>
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="mb-16">
+                <p class="text-sm font-medium text-muted mb-4 tracking-wide uppercase">Selected Work</p>
+                <h2 class="text-4xl md:text-5xl font-bold leading-tight">
+                    Recent projects.
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card-simple rounded-2xl overflow-hidden">
+                    <div class="bg-gray-100 h-64 flex items-center justify-center">
+                        <span class="text-8xl opacity-50">🏦</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-sm text-muted mb-2">Finance / 2024</div>
+                        <h3 class="text-xl font-bold mb-2">Smart Banking Platform</h3>
+                        <p class="text-muted">AI-powered risk assessment and fraud detection system for a major Chinese bank.</p>
+                    </div>
+                </div>
+                <div class="card-simple rounded-2xl overflow-hidden">
+                    <div class="bg-gray-100 h-64 flex items-center justify-center">
+                        <span class="text-8xl opacity-50">🏥</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-sm text-muted mb-2">Healthcare / 2024</div>
+                        <h3 class="text-xl font-bold mb-2">Medical AI Diagnostics</h3>
+                        <p class="text-muted">Computer vision system for early cancer detection in partnership with top hospitals.</p>
+                    </div>
+                </div>
+                <div class="card-simple rounded-2xl overflow-hidden">
+                    <div class="bg-gray-100 h-64 flex items-center justify-center">
+                        <span class="text-8xl opacity-50">🏭</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-sm text-muted mb-2">Manufacturing / 2023</div>
+                        <h3 class="text-xl font-bold mb-2">Predictive Maintenance</h3>
+                        <p class="text-muted">IoT sensors and ML models reducing equipment downtime by 60%.</p>
+                    </div>
+                </div>
+                <div class="card-simple rounded-2xl overflow-hidden">
+                    <div class="bg-gray-100 h-64 flex items-center justify-center">
+                        <span class="text-8xl opacity-50">🎓</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-sm text-muted mb-2">Education / 2023</div>
+                        <h3 class="text-xl font-bold mb-2">Adaptive Learning Platform</h3>
+                        <p class="text-muted">Personalized education AI reaching 2M+ students across 500 schools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider max-w-6xl mx-auto"></div>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 relative">
+        <span class="section-number">03</span>
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div>
+                    <p class="text-sm font-medium text-muted mb-4 tracking-wide uppercase">About</p>
+                    <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                        Who we are.
+                    </h2>
+                    <p class="text-lg text-muted leading-relaxed mb-8">
+                        Kantian Technology is a Beijing-based AI company founded in 2018. We are engineers, researchers, and designers united by a passion for building technology that matters.
+                    </p>
+                    <p class="text-lg text-muted leading-relaxed mb-8">
+                        Our team brings together expertise from Tsinghua University, Peking University, and leading tech companies. We believe in clean design, robust engineering, and measurable results.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="px-4 py-2 border border-gray-200 rounded-full text-sm">
+                            🤝 Google Partner
+                        </div>
+                        <div class="px-4 py-2 border border-gray-200 rounded-full text-sm">
+                            ☁️ AWS Partner
+                        </div>
+                        <div class="px-4 py-2 border border-gray-200 rounded-full text-sm">
+                            🔒 ISO 27001
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div class="card-simple rounded-2xl p-8">
+                        <div class="text-sm text-muted mb-2">Mission</div>
+                        <p class="text-lg font-medium">Make enterprise AI accessible and practical for every business.</p>
+                    </div>
+                    <div class="card-simple rounded-2xl p-8">
+                        <div class="text-sm text-muted mb-2">Approach</div>
+                        <p class="text-lg font-medium">Deep technical expertise combined with practical business thinking.</p>
+                    </div>
+                    <div class="card-simple rounded-2xl p-8">
+                        <div class="text-sm text-muted mb-2">Culture</div>
+                        <p class="text-lg font-medium">Flat hierarchy, remote-first, focus on outcomes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider max-w-6xl mx-auto"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 relative">
+        <span class="section-number">04</span>
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <p class="text-sm font-medium text-muted mb-4 tracking-wide uppercase">Contact</p>
+                <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                    Let's work together.
+                </h2>
+                <p class="text-lg text-muted leading-relaxed mb-12">
+                    Have a project in mind? We'd love to hear about it. Send us a message and we'll get back to you within 24 hours.
+                </p>
+                
+                <div class="card-simple rounded-2xl p-12">
+                    <div class="grid md:grid-cols-3 gap-8 mb-12">
+                        <div>
+                            <div class="text-muted text-sm mb-2">Email</div>
+                            <a href="mailto:hello@kantiantech.com" class="font-medium link-line">hello@kantiantech.com</a>
+                        </div>
+                        <div>
+                            <div class="text-muted text-sm mb-2">Phone</div>
+                            <a href="tel:+861080088888" class="font-medium link-line">+86 10 8008 8888</a>
+                        </div>
+                        <div>
+                            <div class="text-muted text-sm mb-2">Location</div>
+                            <span class="font-medium">Beijing, China</span>
+                        </div>
+                    </div>
+                    <button class="btn-dark w-full py-4 rounded-full font-medium">
+                        Send a message
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 px-8 bg-white border-t border-gray-200">
-        <div class="max-w-7xl mx-auto text-center text-gray-400 text-sm">
-            <p>© 2026 瞰天科技有限公司 版权所有</p>
+    <footer class="py-12 border-t border-gray-100">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <span class="text-lg font-semibold">Kantian</span>
+                    <span class="text-muted ml-1">Technology</span>
+                </div>
+                <div class="text-muted text-sm">
+                    © 2024 Kantian Technology. All rights reserved.
+                </div>
+            </div>
         </div>
     </footer>
 </body>
